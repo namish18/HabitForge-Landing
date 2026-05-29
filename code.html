@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HabitForge Lite - Your Productivity, Fully Owned</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#5b001a",
+                        "surface-container-highest": "#353438",
+                        "surface": "#131316",
+                        "background": "#131316",
+                        "secondary-fixed": "#ede1ce",
+                        "on-background": "#e4e1e6",
+                        "surface-dim": "#131316",
+                        "on-tertiary-fixed-variant": "#005227",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed-dim": "#5ddf88",
+                        "on-tertiary-container": "#003115",
+                        "secondary-fixed-dim": "#d1c5b3",
+                        "primary-fixed": "#ffdadc",
+                        "surface-variant": "#353438",
+                        "on-secondary-fixed-variant": "#4d4638",
+                        "on-secondary-container": "#bfb4a2",
+                        "inverse-primary": "#b51f44",
+                        "on-primary-fixed": "#400010",
+                        "on-primary": "#67001f",
+                        "surface-container": "#1f1f22",
+                        "tertiary-container": "#0ca657",
+                        "surface-container-high": "#2a2a2d",
+                        "on-secondary-fixed": "#211b0f",
+                        "surface-bright": "#39393c",
+                        "surface-container-lowest": "#0e0e11",
+                        "error-container": "#93000a",
+                        "outline-variant": "#594042",
+                        "tertiary": "#5ddf88",
+                        "inverse-on-surface": "#303033",
+                        "on-tertiary": "#003919",
+                        "secondary-container": "#4d4638",
+                        "on-surface-variant": "#e1bec0",
+                        "primary": "#ffb2b9",
+                        "on-primary-fixed-variant": "#91002f",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed": "#7bfca2",
+                        "primary-fixed-dim": "#ffb2b9",
+                        "on-tertiary-fixed": "#00210c",
+                        "primary-container": "#fb5573",
+                        "outline": "#a8898b",
+                        "on-secondary": "#363023",
+                        "surface-container-low": "#1b1b1e",
+                        "on-surface": "#e4e1e6",
+                        "secondary": "#d1c5b3",
+                        "surface-tint": "#ffb2b9",
+                        "on-error": "#690005",
+                        "inverse-surface": "#e4e1e6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "32px",
+                        "container-margin": "24px",
+                        "base": "8px",
+                        "gutter": "16px",
+                        "stack-md": "12px",
+                        "stack-sm": "4px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Manrope", "sans-serif"],
+                        "body-md": ["Inter", "sans-serif"],
+                        "headline-md": ["Manrope", "sans-serif"],
+                        "label-sm": ["JetBrains Mono", "monospace"],
+                        "display-lg": ["Manrope", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "0.01em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "0.03em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(26, 26, 30, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(209, 197, 179, 0.1);
+        }
+        .glass-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(209,197,179,0.2) 50%, rgba(255,255,255,0) 100%);
+        }
+        .glass-panel::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient(180deg, rgba(209,197,179,0.2) 0%, rgba(255,255,255,0) 100%);
+        }
+        .shadow-multi {
+            box-shadow: 
+                0 4px 4px rgba(0, 0, 0, 0.4),
+                0 12px 12px rgba(247, 82, 112, 0.05),
+                0 40px 40px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_4px_0_rgba(0,0,0,0.25),0_12px_12px_0_rgba(255,178,185,0.05)]">
+<div class="flex justify-between items-center px-container-margin py-base max-w-7xl mx-auto">
+<div class="font-display-lg text-display-lg-mobile md:text-display-lg tracking-tight text-primary">
+                HabitForge Lite
+            </div>
+<div class="hidden md:flex items-center gap-gutter">
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-white/5 px-3 py-2 rounded-md" href="#">Features</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-white/5 px-3 py-2 rounded-md" href="#">Pricing</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-white/5 px-3 py-2 rounded-md" href="#">About</a>
+</div>
+<button class="bg-primary-container text-on-primary-container font-label-sm text-label-sm px-6 py-3 rounded-full hover:opacity-90 transition-all active:scale-95">
+                Get Started
+            </button>
+</div>
+</nav>
+<main class="flex-grow pt-32 pb-24">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-container-margin relative z-10 flex flex-col md:flex-row items-center gap-stack-lg mb-32">
+<div class="w-full md:w-1/2 flex flex-col gap-stack-md z-20">
+<div class="inline-flex items-center gap-2 bg-white/5 rounded-full px-4 py-1.5 w-max border border-white/10 mb-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-secondary">v2.0 Beta Live</span>
+</div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface leading-tight">
+                    Your Productivity, <span class="text-primary block md:inline">Fully Owned.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                    A professional-grade productivity suite that uses GitHub as your personal, private database. No tracking, no middleman, just pure focus.
+                </p>
+<div class="flex flex-col sm:flex-row gap-gutter mt-4">
+<button class="bg-primary text-on-primary font-label-sm text-label-sm px-8 py-4 rounded-full shadow-[0_0_20px_rgba(255,178,185,0.3)] hover:shadow-[0_0_30px_rgba(255,178,185,0.5)] transition-all active:scale-95 flex items-center justify-center gap-2">
+                        Get Started Free
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<button class="bg-transparent border border-secondary text-secondary font-label-sm text-label-sm px-8 py-4 rounded-full hover:bg-secondary/10 transition-all active:scale-95 flex items-center justify-center gap-2">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+                        View on GitHub
+                    </button>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative">
+<div class="absolute inset-0 bg-primary/20 blur-[100px] rounded-full pointer-events-none"></div>
+<div class="glass-panel shadow-multi rounded-xl overflow-hidden relative border border-white/10 aspect-[4/3] flex items-center justify-center">
+<img alt="Abstract representation of a digital dashboard" class="w-full h-full object-cover opacity-80 mix-blend-luminosity" data-alt="A highly detailed, sophisticated 3D glassmorphic representation of a digital dashboard floating in a dark, atmospheric void. The scene is lit by subtle ambient light and striking edge highlights in a vibrant pink hue. The aesthetic is modern, minimalist, and technical, resembling a high-end data visualization interface made of translucent glass and glowing data points, set against a deep black background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHWp8PvRQB7aA_Rn-V8OiNU3t-QU-ByvsNT3dqhMPGsFTtV_X0pQ-2QWoNyg--yJMm2PxYYOorQzX3e3gxNQp8IphKGKdnA9hnaRmaqxoxLInRrWpALLKmxOZKfBnt0o-3sJ07hIWb2NJD9AkPJNm3L9MCzquWsrNxQfzlnpE0vliPbG0uaZZr4bC-AUS7u-E9AS0JUyY4g4ykYvyCGqJuw-fs4sLmu2C-b5wJzTpzHbOqfQ5TBGPkWO7G5P3B3NEUB7YllcuE8XNT"/>
+</div>
+</div>
+</section>
+<!-- Features Section -->
+<section class="max-w-7xl mx-auto px-container-margin py-stack-lg mb-32">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">Engineered for Focus</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Everything you need to maintain flow state, built on an architecture you control.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-container-margin">
+<!-- Feature 1 -->
+<div class="glass-panel shadow-multi rounded-xl p-8 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center mb-6 border border-white/5">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 0;">database</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">GitHub as a Database</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Your tasks, notes, and metrics are serialized as JSON in a private repository you own. Complete data sovereignty, infinite version history, zero lock-in.</p>
+</div>
+<!-- Feature 2 -->
+<div class="glass-panel shadow-multi rounded-xl p-8 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center mb-6 border border-white/5">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 0;">timer</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Integrated Focus Tools</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Built-in Pomodoro timers, strict session tracking, and intelligent distractor blocking. Designed to induce and maintain deep work states seamlessly.</p>
+</div>
+<!-- Feature 3 -->
+<div class="glass-panel shadow-multi rounded-xl p-8 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center mb-6 border border-white/5">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 0;">insights</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Deep Analytics</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Visualize your productivity patterns with high-fidelity density maps and category distribution charts. Understand your flow, optimize your routine.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-stack-lg border-t border-white/5 z-40 relative">
+<div class="flex flex-col md:flex-row justify-between items-center px-container-margin gap-gutter max-w-7xl mx-auto">
+<div class="font-display-lg-mobile md:text-display-lg-mobile text-primary font-bold">
+                HabitForge Lite
+            </div>
+<div class="flex flex-wrap items-center justify-center gap-gutter font-label-sm text-label-sm">
+<a class="text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Terms</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Privacy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Twitter</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">GitHub</a>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">
+                © 2024 HabitForge Lite. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>
